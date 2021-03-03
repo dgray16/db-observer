@@ -85,6 +85,10 @@
                             <goal>process-asciidoc</goal>
                         </goals>
                         <configuration>
+                            <sourceDirectory>src/asciidoc</sourceDirectory>
+                            <attributes>
+                                <snippets>${project.build.directory}/snippets</snippets>
+                            </attributes>
                             <backend>html</backend>
                             <doctype>book</doctype>
                         </configuration>

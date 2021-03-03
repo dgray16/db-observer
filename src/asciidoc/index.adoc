@@ -1,0 +1,54 @@
+= DB Observer REST API
+:toc: left
+
+:sectlinks:
+:sectnums:
+
+== Connection Config Controller
+
+=== Get Connection Configurations
+
+==== HTTP request
+include::{snippets}/connection-config/get-connection-configs/http-request.adoc[]
+
+==== HTTP response
+include::{snippets}/connection-config/get-connection-configs/http-response.adoc[]
+
+==== HTTP response fields
+include::{snippets}/connection-config/get-connection-configs/response-fields.adoc[]
+
+=== Create Connection Configuration
+
+==== HTTP request
+include::{snippets}/connection-config/create-connection-config/http-request.adoc[]
+
+==== HTTP response
+include::{snippets}/connection-config/create-connection-config/http-response.adoc[]
+
+==== HTTP request fields
+include::{snippets}/connection-config/create-connection-config/request-fields.adoc[]
+
+=== Update Connection Configuration
+
+==== HTTP request
+include::{snippets}/connection-config/update-connection-config/http-request.adoc[]
+
+==== HTTP path parameters
+include::{snippets}/connection-config/update-connection-config/path-parameters.adoc[]
+
+==== HTTP response
+include::{snippets}/connection-config/update-connection-config/http-response.adoc[]
+
+==== HTTP request fields
+include::{snippets}/connection-config/update-connection-config/request-fields.adoc[]
+
+=== Delete Connection Configuration
+
+==== HTTP request
+include::{snippets}/connection-config/delete-connection-config/http-request.adoc[]
+
+==== HTTP path parameters
+include::{snippets}/connection-config/delete-connection-config/path-parameters.adoc[]
+
+==== HTTP response
+include::{snippets}/connection-config/delete-connection-config/http-response.adoc[]

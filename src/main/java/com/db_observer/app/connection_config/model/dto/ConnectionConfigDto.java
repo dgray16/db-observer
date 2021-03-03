@@ -1,4 +1,4 @@
-package com.db_observer.app.connection_config.model;
+package com.db_observer.app.connection_config.model.dto;
 
 import com.db_observer.app.domain.model.entity.ConnectionConfig;
 import lombok.AccessLevel;
@@ -9,18 +9,18 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ConnectionConfigDto {
 
-    String name;
-    String hostname;
-    Integer port;
+    String connectionName;
+    String databaseHostname;
+    Integer databasePort;
     String databaseName;
     String username;
 
     public static ConnectionConfigDto of(ConnectionConfig entity) {
         final ConnectionConfigDto result = new ConnectionConfigDto();
 
-        result.setName(entity.getConnectionName());
-        result.setHostname(entity.getDatabaseHostname());
-        result.setPort(entity.getDatabasePort());
+        result.setConnectionName(entity.getConnectionName());
+        result.setDatabaseHostname(entity.getDatabaseHostname());
+        result.setDatabasePort(entity.getDatabasePort());
         result.setDatabaseName(entity.getDatabaseName());
         result.setUsername(entity.getUsername());
 
