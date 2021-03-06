@@ -52,3 +52,58 @@ include::{snippets}/connection-config/delete-connection-config/path-parameters.a
 
 ==== HTTP response
 include::{snippets}/connection-config/delete-connection-config/http-response.adoc[]
+
+== Browsing Controller
+
+=== Get Schemas
+
+==== HTTP request
+include::{snippets}/browsing/get-schemas/http-request.adoc[]
+
+==== HTTP response
+include::{snippets}/browsing/get-schemas/http-response.adoc[]
+
+==== HTTP response fields
+include::{snippets}/browsing/get-schemas/response-fields.adoc[]
+
+=== Get Tables
+
+==== HTTP request
+include::{snippets}/browsing/get-tables/http-request.adoc[]
+
+==== HTTP path parameters
+include::{snippets}/browsing/get-tables/path-parameters.adoc[]
+
+==== HTTP response
+include::{snippets}/browsing/get-tables/http-response.adoc[]
+
+==== HTTP response fields
+include::{snippets}/browsing/get-tables/response-fields.adoc[]
+
+=== Get Columns
+
+==== HTTP request
+include::{snippets}/browsing/get-columns/http-request.adoc[]
+
+==== HTTP path parameters
+include::{snippets}/browsing/get-columns/path-parameters.adoc[]
+
+==== HTTP response
+include::{snippets}/browsing/get-columns/http-response.adoc[]
+
+==== HTTP response fields
+include::{snippets}/browsing/get-columns/response-fields.adoc[]
+
+=== Get Table Preview
+
+==== HTTP request
+include::{snippets}/browsing/get-table-preview/http-request.adoc[]
+
+==== HTTP path parameters
+include::{snippets}/browsing/get-table-preview/path-parameters.adoc[]
+
+==== HTTP response
+include::{snippets}/browsing/get-table-preview/http-response.adoc[]
+
+==== HTTP response fields
+include::{snippets}/browsing/get-table-preview/response-fields.adoc[]

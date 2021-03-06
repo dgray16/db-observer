@@ -12,6 +12,7 @@
         </appender>
 
         <logger name="com.db_observer" level="DEBUG"/>
+        <logger name="org.springframework.jdbc.core.JdbcTemplate" level="DEBUG"/>
 
         <root level="INFO">
             <appender-ref ref="STDOUT"/>

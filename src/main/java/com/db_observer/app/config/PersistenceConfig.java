@@ -24,7 +24,7 @@ public class PersistenceConfig {
 
     @Bean
     DataSource dataSource() {
-        final PostgreSQLContainer container = new PostgreSQLContainer("postgres:13.2-alpine")
+        final PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:13.2-alpine")
                 .withDatabaseName("db_observer")
                 .withUsername("observer")
                 .withPassword("observer");
