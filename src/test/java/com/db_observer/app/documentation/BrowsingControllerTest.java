@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.transaction.annotation.Transactional;
-import org.testcontainers.containers.PostgreSQLContainer;
 
 /** Tests for {@link com.db_observer.app.browsing.controller.BrowsingController} */
 class BrowsingControllerTest extends AbstractTest {
@@ -192,29 +191,6 @@ class BrowsingControllerTest extends AbstractTest {
                     .andExpect(MockMvcResultMatchers.status().isOk())
                     .andDo(document);
         }
-    }
-
-    private PostgreSQLContainer<?> createDatabase() {
-        PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:13.2-alpine")
-                .withPassword("secret")
-                .withUsername("spring")
-                .withDatabaseName("spring_db")
-                .withInitScript("browsing/init.sql");
-
-        container.start();
-
-        return container;
-    }
-
-    private ConnectionConfig createConnectionConfig(Integer port, String host, String username, String password, String databaseName) {
-        return connectionConfigService.create(entity -> {
-           entity.setDatabasePort(port);
-           entity.setDatabaseHostname(host);
-           entity.setConnectionName("Spring DB");
-           entity.setUsername(username);
-           entity.setPassword(password);
-           entity.setDatabaseName(databaseName);
-        });
     }
 
 }

@@ -74,12 +74,12 @@ class ConnectionConfigControllerDocumentationTest extends AbstractTest {
         final RestDocumentationResultHandler document = MockMvcRestDocumentation.document(
                 "connection-config/create-connection-config",
                 PayloadDocumentation.requestFields(
-                        constrainedFields.withPath("username").description("User login name"),
-                        constrainedFields.withPath("password").description("User login password"),
-                        constrainedFields.withPath("connectionName").description("Name of database connection"),
-                        constrainedFields.withPath("databasePort").description("Database port"),
-                        constrainedFields.withPath("databaseName").description("Database name"),
-                        constrainedFields.withPath("databaseHostname").description("Host name of database")
+                        constrainedFields.payloadWithPath("username").description("User login name"),
+                        constrainedFields.payloadWithPath("password").description("User login password"),
+                        constrainedFields.payloadWithPath("connectionName").description("Name of database connection"),
+                        constrainedFields.payloadWithPath("databasePort").description("Database port"),
+                        constrainedFields.payloadWithPath("databaseName").description("Database name"),
+                        constrainedFields.payloadWithPath("databaseHostname").description("Host name of database")
                 )
         );
 
@@ -122,12 +122,12 @@ class ConnectionConfigControllerDocumentationTest extends AbstractTest {
         final RestDocumentationResultHandler document = MockMvcRestDocumentation.document(
                 "connection-config/update-connection-config",
                 PayloadDocumentation.requestFields(
-                        constrainedFields.withPath("username").description("User login name"),
-                        constrainedFields.withPath("password").description("User login password"),
-                        constrainedFields.withPath("connectionName").description("Name of database connection"),
-                        constrainedFields.withPath("databasePort").description("Database port"),
-                        constrainedFields.withPath("databaseName").description("Database name"),
-                        constrainedFields.withPath("databaseHostname").description("Host name of database")
+                        constrainedFields.payloadWithPath("username").description("User login name"),
+                        constrainedFields.payloadWithPath("password").description("User login password"),
+                        constrainedFields.payloadWithPath("connectionName").description("Name of database connection"),
+                        constrainedFields.payloadWithPath("databasePort").description("Database port"),
+                        constrainedFields.payloadWithPath("databaseName").description("Database name"),
+                        constrainedFields.payloadWithPath("databaseHostname").description("Host name of database")
                 ),
                 RequestDocumentation.pathParameters(idParameter)
         );
