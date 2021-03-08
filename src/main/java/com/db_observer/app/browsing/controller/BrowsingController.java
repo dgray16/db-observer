@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
 import java.util.List;
 
@@ -32,24 +31,24 @@ public class BrowsingController {
     }
 
     @GetMapping(value = "browsing/schemas/{schema}/tables")
-    public ResponseEntity<List<TableDto>> getTables(@Valid @PathVariable @NotBlank String schema,
+    public ResponseEntity<List<TableDto>> getTables(@PathVariable String schema,
                                                     @Valid @RequestParam @Positive Long connectionConfigId) {
 
         return ResponseEntity.ok(browsingWebService.getTables(connectionConfigId, schema));
     }
 
     @GetMapping(value = "browsing/schemas/{schema}/tables/{table}")
-    public ResponseEntity<List<ColumnDto>> getColumns(@Valid @PathVariable @NotBlank String schema,
-                                                      @Valid @PathVariable @NotBlank String table,
+    public ResponseEntity<List<ColumnDto>> getColumns(@PathVariable String schema,
+                                                      @PathVariable String table,
                                                       @Valid @RequestParam @Positive Long connectionConfigId) {
 
         return ResponseEntity.ok(browsingWebService.getColumns(connectionConfigId, schema, table));
     }
 
     @GetMapping(value = "browsing/schemas/{schema}/tables/{table}/preview")
-    public ResponseEntity<List<TablePreviewDto>> getTablePreview(@Valid @PathVariable @NotBlank String schema,
-                                                           @Valid @PathVariable @NotBlank String table,
-                                                           @Valid @RequestParam @Positive Long connectionConfigId) {
+    public ResponseEntity<List<TablePreviewDto>> getTablePreview(@PathVariable String schema,
+                                                                 @PathVariable String table,
+                                                                 @Valid @RequestParam @Positive Long connectionConfigId) {
 
         return ResponseEntity.ok(browsingWebService.getTablePreview(connectionConfigId, schema, table));
     }

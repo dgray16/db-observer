@@ -11,6 +11,7 @@ import org.springframework.restdocs.mockmvc.RestDocumentationResultHandler;
 import org.springframework.restdocs.payload.PayloadDocumentation;
 import org.springframework.restdocs.request.ParameterDescriptor;
 import org.springframework.restdocs.request.RequestDocumentation;
+import org.springframework.restdocs.snippet.Attributes;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -37,11 +38,14 @@ class BrowsingControllerTest extends AbstractTest {
                     .get("/browsing/schemas")
                     .queryParam("connectionConfigId", connectionConfig.getId().toString());
 
+            final ParameterDescriptor connectionId = RequestDocumentation
+                    .parameterWithName("connectionConfigId")
+                    .description("Id of Connection Config")
+                    .attributes(Attributes.key("constraints").value("Must be positive"));
+
             final RestDocumentationResultHandler document = MockMvcRestDocumentation.document(
                     "browsing/get-schemas",
-                    RequestDocumentation.requestParameters(
-                            RequestDocumentation.parameterWithName("connectionConfigId").description("Id of Connection Config")
-                    ),
+                    RequestDocumentation.requestParameters(connectionId),
                     PayloadDocumentation.responseFields(
                             PayloadDocumentation.fieldWithPath("[].schemaName").description("Name of the Schema"),
                             PayloadDocumentation.fieldWithPath("[].schemaOwner").description("Owner of the Schema")
@@ -77,11 +81,14 @@ class BrowsingControllerTest extends AbstractTest {
                     .parameterWithName("schema")
                     .description("Name of the Schema");
 
+            final ParameterDescriptor connectionId = RequestDocumentation
+                    .parameterWithName("connectionConfigId")
+                    .description("Id of Connection Config")
+                    .attributes(Attributes.key("constraints").value("Must be positive"));
+
             final RestDocumentationResultHandler document = MockMvcRestDocumentation.document(
                     "browsing/get-tables",
-                    RequestDocumentation.requestParameters(
-                            RequestDocumentation.parameterWithName("connectionConfigId").description("Id of Connection Config")
-                    ),
+                    RequestDocumentation.requestParameters(connectionId),
                     RequestDocumentation.pathParameters(schemaParameter),
                     PayloadDocumentation.responseFields(
                             PayloadDocumentation.fieldWithPath("[].tableName").description("Name of the Table"),
@@ -124,11 +131,14 @@ class BrowsingControllerTest extends AbstractTest {
                     .parameterWithName("table")
                     .description("Name of the Table");
 
+            final ParameterDescriptor connectionIdParam = RequestDocumentation
+                    .parameterWithName("connectionConfigId")
+                    .description("Id of Connection Config")
+                    .attributes(Attributes.key("constraints").value("Must be positive"));
+
             final RestDocumentationResultHandler document = MockMvcRestDocumentation.document(
                     "browsing/get-columns",
-                    RequestDocumentation.requestParameters(
-                            RequestDocumentation.parameterWithName("connectionConfigId").description("Id of Connection Config")
-                    ),
+                    RequestDocumentation.requestParameters(connectionIdParam),
                     RequestDocumentation.pathParameters(schemaParameter, tableParameter),
                     PayloadDocumentation.responseFields(
                             PayloadDocumentation.fieldWithPath("[].columnName").description("Name of the Column"),
@@ -142,7 +152,7 @@ class BrowsingControllerTest extends AbstractTest {
             mockMvc
                     .perform(requestBuilder)
                     .andExpect(MockMvcResultMatchers.status().isOk())
-                    .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(NumberUtils.INTEGER_ONE)))
+                    .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(NumberUtils.INTEGER_TWO)))
                     .andExpect(MockMvcResultMatchers.jsonPath("$.[0].columnName").value("first_name"))
                     .andExpect(MockMvcResultMatchers.jsonPath("$.[0].columnDefault").value("'random name'::character varying"))
                     .andExpect(MockMvcResultMatchers.jsonPath("$.[0].isNullable").value(false))
@@ -177,11 +187,14 @@ class BrowsingControllerTest extends AbstractTest {
                     .parameterWithName("table")
                     .description("Name of the Table");
 
+            final ParameterDescriptor connectionId = RequestDocumentation
+                    .parameterWithName("connectionConfigId")
+                    .description("Id of Connection Config")
+                    .attributes(Attributes.key("constraints").value("Must be positive"));
+
             final RestDocumentationResultHandler document = MockMvcRestDocumentation.document(
                     "browsing/get-table-preview",
-                    RequestDocumentation.requestParameters(
-                            RequestDocumentation.parameterWithName("connectionConfigId").description("Id of Connection Config")
-                    ),
+                    RequestDocumentation.requestParameters(connectionId),
                     RequestDocumentation.pathParameters(schemaParameter, tableParameter),
                     PayloadDocumentation.responseFields(PayloadDocumentation.subsectionWithPath("[].columnsWithValues").description("Map (key = column, value = list of values)"))
             );

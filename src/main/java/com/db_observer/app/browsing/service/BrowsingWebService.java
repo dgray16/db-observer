@@ -38,7 +38,6 @@ public class BrowsingWebService {
 
         if (foundConnection.isPresent()) {
             final NamedParameterJdbcTemplate jdbcTemplate = dataSourceService.getJdbcTemplate(foundConnection.get());
-            /* TODO support multiple databases */
             result = jdbcTemplate
                     .queryForStream("SELECT schema_name, schema_owner FROM information_schema.schemata;", Collections.emptyMap(), SchemaDto::mapRow)
                     .collect(Collectors.toUnmodifiableList());

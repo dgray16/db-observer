@@ -60,6 +60,9 @@ include::{snippets}/connection-config/delete-connection-config/http-response.ado
 ==== HTTP request
 include::{snippets}/browsing/get-schemas/http-request.adoc[]
 
+==== HTTP request parameters
+include::{snippets}/browsing/get-schemas/request-parameters.adoc[]
+
 ==== HTTP response
 include::{snippets}/browsing/get-schemas/http-response.adoc[]
 
@@ -73,6 +76,9 @@ include::{snippets}/browsing/get-tables/http-request.adoc[]
 
 ==== HTTP path parameters
 include::{snippets}/browsing/get-tables/path-parameters.adoc[]
+
+==== HTTP request parameters
+include::{snippets}/browsing/get-tables/request-parameters.adoc[]
 
 ==== HTTP response
 include::{snippets}/browsing/get-tables/http-response.adoc[]
@@ -88,6 +94,9 @@ include::{snippets}/browsing/get-columns/http-request.adoc[]
 ==== HTTP path parameters
 include::{snippets}/browsing/get-columns/path-parameters.adoc[]
 
+==== HTTP request parameters
+include::{snippets}/browsing/get-columns/request-parameters.adoc[]
+
 ==== HTTP response
 include::{snippets}/browsing/get-columns/http-response.adoc[]
 
@@ -102,8 +111,44 @@ include::{snippets}/browsing/get-table-preview/http-request.adoc[]
 ==== HTTP path parameters
 include::{snippets}/browsing/get-table-preview/path-parameters.adoc[]
 
+==== HTTP request parameters
+include::{snippets}/browsing/get-table-preview/request-parameters.adoc[]
+
 ==== HTTP response
 include::{snippets}/browsing/get-table-preview/http-response.adoc[]
 
 ==== HTTP response fields
 include::{snippets}/browsing/get-table-preview/response-fields.adoc[]
+
+== Statistics Controller
+
+=== Get Tables Statistic
+
+==== HTTP request
+include::{snippets}/statistic/get-tables-statistic/http-request.adoc[]
+
+==== HTTP request parameters
+include::{snippets}/statistic/get-tables-statistic/request-parameters.adoc[]
+
+==== HTTP response
+include::{snippets}/statistic/get-tables-statistic/http-response.adoc[]
+
+==== HTTP response fields
+include::{snippets}/statistic/get-tables-statistic/response-fields.adoc[]
+
+=== Get Columns Statistic
+
+==== HTTP request
+include::{snippets}/statistic/get-columns-statistic/http-request.adoc[]
+
+==== HTTP path parameters
+include::{snippets}/statistic/get-columns-statistic/path-parameters.adoc[]
+
+==== HTTP request parameters
+include::{snippets}/statistic/get-columns-statistic/request-parameters.adoc[]
+
+==== HTTP response
+include::{snippets}/statistic/get-columns-statistic/http-response.adoc[]
+
+==== HTTP response fields
+include::{snippets}/statistic/get-columns-statistic/response-fields.adoc[]

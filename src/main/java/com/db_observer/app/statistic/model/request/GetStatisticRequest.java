@@ -5,12 +5,18 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class GetColumnStatisticRequest extends GetTablesStatisticRequest {
+public class GetStatisticRequest {
+
+    @NotNull
+    @Positive
+    Long connectionConfigId;
 
     @NotBlank
-    String table;
+    String schema;
 
 }

@@ -1,2 +1,3 @@
-CREATE TABLE public.customers(first_name character varying(255) COLLATE pg_catalog."default" NOT NULL DEFAULT 'random name');
-INSERT INTO customers VALUES('H.P. Baxxter');
+CREATE TABLE public.customers(first_name CHARACTER VARYING (255) NOT NULL DEFAULT 'random name', employees INTEGER NOT NULL DEFAULT 0);
+INSERT INTO customers VALUES('H.P. Baxxter', 10);
+INSERT INTO customers VALUES('Tom Jones', 20);

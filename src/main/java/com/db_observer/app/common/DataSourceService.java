@@ -21,7 +21,6 @@ public class DataSourceService {
     }
 
     public DataSource getDataSource(ConnectionConfig connectionConfig, String schema) {
-        /* TODO support multiple databases */
         final String url = String.format(
                 "jdbc:postgresql://%s:%d/%s",
                 connectionConfig.getDatabaseHostname(),
